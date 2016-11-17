@@ -1,0 +1,4 @@
+for i = i:10
+    trial = csvread(strcat('EZ\Corner\', int2str(i), '.txt'));
+    plot(trial(:,
+end
