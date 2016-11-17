@@ -5,7 +5,7 @@ int pos = 0;
 int sonarPin = 0;
 int servoPin = 9;
 
-int counter = 10;
+int counter = 12;
 
 void setup() {
   myservo.attach(servoPin);  // attaches the servo on pin 9 to the servo object
@@ -17,14 +17,14 @@ void loop() {
   
   for (pos = 0; pos <= 170;pos ++) {    
     myservo.write(pos);
-    delay(10);           
+    delay(15);           
     printReading();
   }
   delay(1000);
   printPlaceHolder();
   for (pos = 170; pos >= 0; pos--) {
     myservo.write(pos);
-    delay(10);
+    delay(15);
     printReading();
   }
   delay(1000);
@@ -42,18 +42,4 @@ void printReading() {
 
 void printPlaceHolder() {
   Serial.println("-1,-1");
-}
-
-void serialEvent() {
-  while (Serial.available()) {
-    // get the new byte:
-    char inChar = (char)Serial.read();
-    // add it to the inputString:
-    inputString += inChar;
-    // if the incoming character is a newline, set a flag
-    // so the main loop can do something about it:
-    if (inChar == '\n') {
-      stringComplete = true;
-    }
-  }
 }
