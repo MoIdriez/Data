@@ -5,16 +5,16 @@ NOTE: for best format open with notepad++
 
 This file serves to explain the document structure and the trial setups and arena conditions. The following illustration serves to explain the variables I will be referring to:
 
-	 |	<-x-	0	-z->   |
-	 |			|		   |
-	 |			y		   |
+	 |	<-x-	0	-z->   	   |
+	 |		|		   |
+	 |		y		   |
 wx ->|					   | <- wz
-	 |					   |
-	 |					   |
-	 |__________|__________|
-				^
-				|
-				wy
+	 |				   |
+	 |				   |
+	 |______________|__________________|
+			^
+			|
+			wy
 legend:
 d - ~40cm
 wx - wall X
