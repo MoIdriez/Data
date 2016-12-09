@@ -1,8 +1,6 @@
 Author: Mohamed Idries
 Date: 16/11/2016 17:50
 
-NOTE: for best format open with notepad++
-
 This file serves to explain the document structure and the trial setups and arena conditions. The following illustration serves to explain the variables I will be referring to:
 
 	 |	<-x-	0	-z->   	   |
