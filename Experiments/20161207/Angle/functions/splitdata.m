@@ -1,4 +1,4 @@
-function M = splitdata(data)
+function M = splitdata(data, index)
     M = [];
     temp = [];
     % split up the data
@@ -7,12 +7,9 @@ function M = splitdata(data)
             M = [M;temp];
             temp = [];        
         else
-            temp = [temp data(i,4)];
+            temp = [temp data(i,index)];
         end
     end
-    
     M = M';
-    
-
 end
 

@@ -1,15 +1,27 @@
-data = splitdata(csvread('EZ1\10.txt'));
-[a,b,c] = defplots(data);
+fileLocation = 'EZBrown\10.txt';
+rawdata = csvread(fileLocation);
 
-data = splitdata(csvread('EZBrown\10.txt'));
-[a,b,c] = defplots(data);
+% now let's read in the data and split out the scans
+data = splitdata(rawdata, 4);
 
-%plots = [a b c];
-%filenames = {'10all';'10alt';'10flip'};
-%saveplots('EZ1\plots\', plots, filenames);
-%plots = 
-%saveplots(
+% and get the ground truth
+gt = ground_truth(rawdata, 93);
 
-%print(all, 'EZ1\plots\10all', '-dpng');
-%print(alt, 'EZ1\plots\10alt', '-dpng');
-%print(flip, 'EZ1\plots\10flip', '-dpng');
+% split up the scans that go one way and the ones that go the other way
+forward = data(:,1:2:end);
+backward = data(:,2:2:end);
+
+% let's get the median
+forwardmean = mean(forward');
+backwardmean = mean(backward');
+
+figure;
+hold on;
+pf = plot(forward);
+plot(forwardmean, 'Color', 'red'); 
+pb = plot(backward);
+plot(backwardmean, 'Color', 'blue'); 
+plot(gt, 'Color', [0 0 0 1]);
+
+set(pf, 'Color', [1 0 0 0.1]);
+set(pb, 'Color', [0 0 1 0.1]);
