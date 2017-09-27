@@ -56,6 +56,9 @@ function [all, alt, flip, median, fitting] = defplots(data)
         end    
     end
     
+    % calculating the standard deviation
+    sd = figure;
+    plot(std(data'));
     
 
 end

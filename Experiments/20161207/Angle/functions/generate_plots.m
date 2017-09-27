@@ -1,4 +1,4 @@
-function genplots(sonars, interv)
+function generate_plots(sonars, interv)
     % foreach of the sonars
     for i = 1:size(sonars,2)
 
